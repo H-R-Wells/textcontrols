@@ -1,51 +1,139 @@
-import React from 'react'
+import React, { useState } from 'react'
+
 
 export default function About() {
-    return (
-        <div className='container p-10'>
-            <div id="accordion-collapse" data-accordion="collapse">
-  <h2 id="accordion-collapse-heading-1">
-    <button type="button" class="flex justify-between items-center p-5 w-full font-medium text-left text-gray-500 rounded-t-xl border border-b-0 border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800" data-accordion-target="#accordion-collapse-body-1" aria-expanded="true" aria-controls="accordion-collapse-body-1">
-      <span>What is Flowbite?</span>
-      <svg data-accordion-icon class="w-6 h-6 rotate-180 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-    </button>
-  </h2>
-  <div id="accordion-collapse-body-1" class="hidden" aria-labelledby="accordion-collapse-heading-1">
-    <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
-      <p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and more.</p>
-      <p class="text-gray-500 dark:text-gray-400">Check out this guide to learn how to <a href="https://flowbite.com/docs/getting-started/introduction/" class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start developing websites even faster with components on top of Tailwind CSS.</p>
-    </div>
-  </div>
-  <h2 id="accordion-collapse-heading-2">
-    <button type="button" class="flex justify-between items-center p-5 w-full font-medium text-left text-gray-500 border border-b-0 border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800" data-accordion-target="#accordion-collapse-body-2" aria-expanded="false" aria-controls="accordion-collapse-body-2">
-      <span>Is there a Figma file available?</span>
-      <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-    </button>
-  </h2>
-  <div id="accordion-collapse-body-2" class="hidden" aria-labelledby="accordion-collapse-heading-2">
-    <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
-      <p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is first conceptualized and designed using the Figma software so everything you see in the library has a design equivalent in our Figma file.</p>
-      <p class="text-gray-500 dark:text-gray-400">Check out the <a href="https://flowbite.com/figma/" class="text-blue-600 dark:text-blue-500 hover:underline">Figma design system</a> based on the utility classes from Tailwind CSS and components from Flowbite.</p>
-    </div>
-  </div>
-  <h2 id="accordion-collapse-heading-3">
-    <button type="button" class="flex justify-between items-center p-5 w-full font-medium text-left text-gray-500 border border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800" data-accordion-target="#accordion-collapse-body-3" aria-expanded="false" aria-controls="accordion-collapse-body-3">
-      <span>What are the differences between Flowbite and Tailwind UI?</span>
-      <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-    </button>
-  </h2>
-  <div id="accordion-collapse-body-3" class="hidden" aria-labelledby="accordion-collapse-heading-3">
-    <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
-      <p class="mb-2 text-gray-500 dark:text-gray-400">The main difference is that the core components from Flowbite are open source under the MIT license, whereas Tailwind UI is a paid product. Another difference is that Flowbite relies on smaller and standalone components, whereas Tailwind UI offers sections of pages.</p>
-      <p class="mb-2 text-gray-500 dark:text-gray-400">However, we actually recommend using both Flowbite, Flowbite Pro, and even Tailwind UI as there is no technical reason stopping you from using the best of two worlds.</p>
-      <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
-      <ul class="pl-5 list-disc text-gray-500 dark:text-gray-400">
-        <li><a href="https://flowbite.com/pro/" class="text-blue-600 dark:text-blue-500 hover:underline">Flowbite Pro</a></li>
-        <li><a href="https://tailwindui.com/" rel="nofollow" class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
+  const [dark, setDarkStyle] = useState({
+    color: 'black',
+    backgroundColor: "white"
+  });
+
+  const [btnText, setbtnText] = useState("Enable Dark Mode");
+
+  const toggleStyle = () => {
+    if (dark.color === "white") {
+      setDarkStyle({
+        color: 'black',
+        backgroundColor: "white"
+      });
+      setbtnText("Enable Dark Mode");
+    }
+    else {
+      setDarkStyle({
+        color: 'white',
+        backgroundColor: "black",
+        border: "2px solid white"
+      });
+      setbtnText("Enable Light MOde");
+    };
+  }
+  return (
+    <div className='container flex p-5 justify-center bg-slate-400 pb-12'>
+      <section className="shadow row w-3/5">
+        <div className="tabs" style={dark}>
+          <div className="border-b tab">
+            <div className="border-l-2 border-transparent relative">
+              <input className="w-full absolute z-10 cursor-pointer opacity-0 h-5 top-6" type="checkbox" id="chck1" />
+              <header className="flex justify-between items-center p-5 pl-8 pr-8 cursor-pointer select-none tab-label" for="chck1">
+                <span className="text-grey-darkest font-thin text-xl">
+                  Massa vitae tortor condimentum lacinia quis vel eros donec
+                </span>
+                <div className="rounded-full border border-grey w-7 h-7 flex items-center justify-center test">
+                  {/* <!-- icon by feathericons.com --> */}
+                  <svg aria-hidden="true" className="" data-reactid="266" fill="none" height="24" stroke="#606F7B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <polyline points="6 9 12 15 18 9">
+                    </polyline>
+                  </svg>
+                </div>
+              </header>
+              <div className="tab-content">
+                <div className="pl-8 pr-8 pb-5 text-grey-darkest">
+                  <ul className="pl-4">
+                    <li className="pb-2">
+                      consectetur adipiscing elit
+                    </li>
+                    <li className="pb-2">
+                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                    </li>
+                    <li className="pb-2">
+                      Viverra orci sagittis eu volutpat odio facilisis mauris
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="border-b tab">
+            <div className="border-l-2 border-transparent relative">
+              <input className="w-full absolute z-10 cursor-pointer opacity-0 h-5 top-6" type="checkbox" id="chck2" />
+              <header className="flex justify-between items-center p-5 pl-8 pr-8 cursor-pointer select-none tab-label" for="chck2">
+                <span className="text-grey-darkest font-thin text-xl">
+                  Massa vitae tortor condimentum lacinia quis vel eros donec
+                </span>
+                <div className="rounded-full border border-grey w-7 h-7 flex items-center justify-center test">
+                  {/* <!-- icon by feathericons.com --> */}
+                  <svg aria-hidden="true" className="" data-reactid="266" fill="none" height="24" stroke="#606F7B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <polyline points="6 9 12 15 18 9">
+                    </polyline>
+                  </svg>
+                </div>
+              </header>
+              <div className="tab-content">
+                <div className="pl-8 pr-8 pb-5 text-grey-darkest">
+                  <ul className="pl-4">
+                    <li className="pb-2">
+                      consectetur adipiscing elit
+                    </li>
+                    <li className="pb-2">
+                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                    </li>
+                    <li className="pb-2">
+                      Viverra orci sagittis eu volutpat odio facilisis mauris
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="border-b tab" >
+            <div className="border-l-2 border-transparent relative">
+              <input className="w-full absolute z-10 cursor-pointer opacity-0 h-5 top-6" type="checkbox" id="chck3" />
+              <header className="flex justify-between items-center p-5 pl-8 pr-8 cursor-pointer select-none tab-label" for="chck3">
+                <span className="text-grey-darkest font-thin text-xl">
+                  Massa vitae tortor condimentum lacinia quis vel eros donec
+                </span>
+                <div className="rounded-full border border-grey w-7 h-7 flex items-center justify-center test">
+                  {/* <!-- icon by feathericons.com --> */}
+                  <svg aria-hidden="true" className="" data-reactid="266" fill="none" height="24" stroke="#606F7B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <polyline points="6 9 12 15 18 9">
+                    </polyline>
+                  </svg>
+                </div>
+              </header>
+              <div className="tab-content">
+                <div className="pl-8 pr-8 pb-5 text-grey-darkest">
+                  <ul className="pl-4">
+                    <li className="pb-2">
+                      consectetur adipiscing elit
+                    </li>
+                    <li className="pb-2">
+                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                    </li>
+                    <li className="pb-2">
+                      Viverra orci sagittis eu volutpat odio facilisis mauris
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className='container p-5'>
+            <button type="submit" onClick={toggleStyle}
+              className="  mx-2 px-2 py-3 md:py-2.5 bg-blue-600 text-white font-medium text-sm leading-tight uppercase rounded shadow-md md:hover:bg-blue-800 hover:shadow-lg focus:bg-blue-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-600 active:shadow-lg active:text-gray-400  transition  duration-150 ease-in-out">
+              <a href="#list">{btnText}</a>
+            </button>
+          </div>
         </div>
-    )
+      </section>
+    </div>
+  )
 }

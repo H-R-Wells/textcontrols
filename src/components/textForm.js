@@ -27,11 +27,22 @@ export default function TextForm(props) {
         let demo = text1.toLowerCase();
         setText(demo.replace(/\b(\w)/g, s => s.toUpperCase()));
     }
+    const copyText =()=>{
+        console.log("Cooping your text");
+        var textom = document.getElementById("textBox");
+        textom.select();
+        navigator.clipboard.writeText(textom.value);
+    }
+    const handleSpace =()=>{
+        console.log("Removing extra spaces for text");
+        let texttom = text1.split(/[ ]+/);
+        setText(texttom.join(" "));
+    }
     const handleOnChange = (event) => {
         console.log("On change is triggered bitch");
         setText(event.target.value);
     }
-    
+
     return (
         <div className='md:flex min-w-full justify-center w-full container bg-slate-400 pb-12'>
             {/* <!-- main  --> */}
@@ -47,7 +58,7 @@ export default function TextForm(props) {
                         </div> */}
                         <div className="form-group mb-6">
                             <label className="text-lg form-label inline-block mb-2 text-gray-700 font-semibold">Write your text below</label>
-                            <textarea id="description" value={text1} onChange={handleOnChange}
+                            <textarea id="textBox" value={text1} onChange={handleOnChange}
                                 className=" form-control block  w-full  px-3  py-1.5  text-base  font-normal text-gray-700  bg-white bg-clip-padding  border border-solid border-gray-300  rounded  transition  ease-in-out   focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                                 rows="5" placeholder="Enter text here"></textarea>
                         </div>
@@ -70,6 +81,16 @@ export default function TextForm(props) {
                             <button type="submit" onClick={capiCase} onChange={handleOnChange}
                                 className=" w-full mx-2 px-2 py-3 md:py-2.5 bg-blue-600 text-white font-medium text-sm leading-tight uppercase rounded shadow-md md:hover:bg-blue-800 hover:shadow-lg focus:bg-blue-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-600 active:shadow-lg active:text-gray-400  transition  duration-150 ease-in-out">
                                 <a href="#list"> capitalized case</a>
+                            </button>
+                        </div>
+                        <div className="flex mt-2">
+                            <button type="submit" id="addbtn" onClick={copyText} onChange={handleOnChange}
+                                className=" w-full mx-2 px-2 py-3 md:py-2.5 bg-blue-600 text-white font-medium text-sm leading-tight uppercase rounded shadow-md md:hover:bg-blue-800 hover:shadow-lg focus:bg-blue-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-600 active:shadow-lg active:text-gray-400  transition  duration-150 ease-in-out">
+                                <a href="#list"> Copy Text</a>
+                            </button>
+                            <button type="submit" onClick={handleSpace} onChange={handleOnChange}
+                                className=" w-full mx-2 px-2 py-3 md:py-2.5 bg-blue-600 text-white font-medium text-sm leading-tight uppercase rounded shadow-md md:hover:bg-blue-800 hover:shadow-lg focus:bg-blue-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-600 active:shadow-lg active:text-gray-400  transition  duration-150 ease-in-out">
+                                <a href="#list"> Clear extra space</a>
                             </button>
                         </div>
                         <div className="flex mt-2">
