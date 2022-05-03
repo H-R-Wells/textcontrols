@@ -5,6 +5,10 @@ import Navbar from "./components/navbar";
 import TextForm from "./components/textForm";
 import Alert from "./components/alert";
 
+
+
+
+
 function App() {
 
   // useStates for Navbar
@@ -27,13 +31,9 @@ function App() {
       msg: msg1,
       type: type1
     })
-    setTimeout(() => {
-      setAlertHide('hidden')
-    }, 3000);
   }
+
   
-
-
 
   const toggleMode = () => {
     // set dark mode
@@ -45,8 +45,11 @@ function App() {
       setMainBox2('bg-gray-600')
       settextMain('text-white')
       setTextArea('bg-slate-300 placeholder-slate-600')
-      showAlert("msg1", "type1")
+      showAlert("Success ", " Dark mode is enabled")
       setAlertHide('block')
+      setTimeout(() => {
+        setAlertHide('hidden');
+      }, 1500);
     }
     // set light mode
     else {
@@ -57,18 +60,21 @@ function App() {
       setMainBox2('bg-slate-200')
       settextMain('text-black')
       setTextArea('bg-white placeholder-slate-400')
-      showAlert("not ok", "b bitch")
+      showAlert("Success ", " Light mode is enabled")
       setAlertHide('block')
+      setTimeout(() => {
+        setAlertHide('hidden');
+      }, 1500);
     }
   }
 
 
   const toggleAlert = () => {
     if (alertHide === "block") {
-      setAlertHide('hidden')
+      setAlertHide('hidden');
     }
     else{
-      setAlertHide('block')
+      setAlertHide('block');
     }
   }
 
@@ -77,9 +83,7 @@ function App() {
   return (
     <>
       <Navbar title="React bitch" aboutText="About" showAlert={showAlert} mode={mode} toggleMode={toggleMode} hover={hover} activeTab={activeTab} />
-      <Alert
-        alertHide={alertHide} toggleAlert={toggleAlert}
-        alert={alert} />
+      <Alert alertHide={alertHide} toggleAlert={toggleAlert} alert={alert} />
       <TextForm mainBox={mainBox} mainBox2={mainBox2} textMain={textMain} textArea={textArea} />
       {/* <About/> */}
     </>

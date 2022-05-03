@@ -2,6 +2,22 @@ import React, { useState } from 'react'
 
 export default function TextForm(props) {
     const [text1, setText] = useState("");
+
+
+    if (text1.match(/(\w+)/g)!==null){
+        var wordCount = text1.match(/(\w+)/g).length;
+        var letterCount = text1.match(/(\w)/g).length;
+    }
+    else{
+        wordCount = "0";
+        letterCount = "0";
+    }
+
+
+
+
+
+
     const upClick = () => {
         console.log("Upper case button is clicked");
         let upText = text1.toUpperCase();
@@ -105,7 +121,7 @@ export default function TextForm(props) {
             <div className={`justify-center px-5 text-left pt-8 pb-12 md:block md:container  py-0 md:px-12 md:py-12 rounded-lg shadow-lg md:my-12  md:max-w-lg mx-8 transition  ease-in-out duration-500 ${props.mainBox2} ${props.textMain}`}>
                 <div className='container flex-grow'>
                     <h1 className='font-semibold text-4xl '>Your Text Summary</h1>
-                    <p className='font-medium text-xl'>{text1.split(" ").length} words and {text1.length} characters</p>
+                    <p className='font-medium text-xl'>{wordCount} words and {letterCount} characters</p>
                     <p className='font-semibold text-2xl mt-4'>Preview:</p>
                     <p id='preview' className='hidden text-slate-400'>Preview of the text will print here </p>
                     <p className='text-blue-600 text-clip break-words'>{text1}</p>
