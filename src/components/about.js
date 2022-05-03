@@ -33,13 +33,13 @@ export default function About() {
           <div className="border-b tab">
             <div className="border-l-2 border-transparent relative">
               <input className="w-full absolute z-10 cursor-pointer opacity-0 h-5 top-6" type="checkbox" id="chck1" />
-              <header className="flex justify-between items-center p-5 pl-8 pr-8 cursor-pointer select-none tab-label" for="chck1">
+              <header className="flex justify-between items-center p-5 pl-8 pr-8 cursor-pointer select-none tab-label" htmlFor="chck1">
                 <span className="text-grey-darkest font-thin text-xl">
                   Massa vitae tortor condimentum lacinia quis vel eros donec
                 </span>
                 <div className="rounded-full border border-grey w-7 h-7 flex items-center justify-center test">
                   {/* <!-- icon by feathericons.com --> */}
-                  <svg aria-hidden="true" className="" data-reactid="266" fill="none" height="24" stroke="#606F7B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                  <svg aria-hidden="true" className="" data-reactid="266" fill="none" height="24" stroke="#606F7B" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                     <polyline points="6 9 12 15 18 9">
                     </polyline>
                   </svg>
@@ -65,13 +65,13 @@ export default function About() {
           <div className="border-b tab">
             <div className="border-l-2 border-transparent relative">
               <input className="w-full absolute z-10 cursor-pointer opacity-0 h-5 top-6" type="checkbox" id="chck2" />
-              <header className="flex justify-between items-center p-5 pl-8 pr-8 cursor-pointer select-none tab-label" for="chck2">
+              <header className="flex justify-between items-center p-5 pl-8 pr-8 cursor-pointer select-none tab-label" htmlFor="chck2">
                 <span className="text-grey-darkest font-thin text-xl">
                   Massa vitae tortor condimentum lacinia quis vel eros donec
                 </span>
                 <div className="rounded-full border border-grey w-7 h-7 flex items-center justify-center test">
                   {/* <!-- icon by feathericons.com --> */}
-                  <svg aria-hidden="true" className="" data-reactid="266" fill="none" height="24" stroke="#606F7B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                  <svg aria-hidden="true" className="" data-reactid="266" fill="none" height="24" stroke="#606F7B" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                     <polyline points="6 9 12 15 18 9">
                     </polyline>
                   </svg>
@@ -97,13 +97,13 @@ export default function About() {
           <div className="border-b tab" >
             <div className="border-l-2 border-transparent relative">
               <input className="w-full absolute z-10 cursor-pointer opacity-0 h-5 top-6" type="checkbox" id="chck3" />
-              <header className="flex justify-between items-center p-5 pl-8 pr-8 cursor-pointer select-none tab-label" for="chck3">
+              <header className="flex justify-between items-center p-5 pl-8 pr-8 cursor-pointer select-none tab-label" htmlFor="chck3">
                 <span className="text-grey-darkest font-thin text-xl">
                   Massa vitae tortor condimentum lacinia quis vel eros donec
                 </span>
                 <div className="rounded-full border border-grey w-7 h-7 flex items-center justify-center test">
                   {/* <!-- icon by feathericons.com --> */}
-                  <svg aria-hidden="true" className="" data-reactid="266" fill="none" height="24" stroke="#606F7B" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                  <svg aria-hidden="true" className="" data-reactid="266" fill="none" height="24" stroke="#606F7B" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                     <polyline points="6 9 12 15 18 9">
                     </polyline>
                   </svg>

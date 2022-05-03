@@ -1,6 +1,7 @@
 import React from 'react';
 import hrwells from "./hrwells.jpg";
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 export default function Navbar(props) {
   return (
@@ -18,8 +19,8 @@ export default function Navbar(props) {
 
               {/* <!-- Mobile menu button--> */}
               <button
-                type="button"
-                className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                type="button" onClick={props.toggleNavMenu}
+                className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 ring-gray-500 ring-inset outline-none ring-1 "
                 aria-controls="mobile-menu"
                 aria-expanded="false">
                 <span className="sr-only">Open main menu</span>
@@ -27,7 +28,7 @@ export default function Navbar(props) {
 
                 {/*Icon when menu is closed. */}
                 <svg
-                  className="block h-6 w-6"
+                  className={`${props.navBtn2} h-6 w-6`}
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -42,7 +43,7 @@ export default function Navbar(props) {
 
                 {/*Icon when menu is open. */}
                 <svg
-                  className="hidden h-6 w-6"
+                  className={`${props.navBtn} h-6 w-6`}
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -59,32 +60,35 @@ export default function Navbar(props) {
 
 
 
+
+
+
             {/* Nav tabs */}
             <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
               <div className="hidden sm:block sm:ml-6">
                 <div className="flex space-x-4">
-                  <a
-                    href="/"
+                  <Link
+                    to="/"
                     className={`${props.activeTab} transition  ease-in-out duration-500  px-3 py-2 rounded-md text-sm font-medium`}
                     aria-current="page">
-                    {props.title}
-                  </a>
+                    React bitch
+                  </Link>
 
-                  <a href="/"
+                  <Link to="/about"
                     className={`${props.hover}  px-3 py-2 rounded-md text-sm font-medium`}>
-                    {props.aboutText}
-                  </a>
+                    About
+                  </Link>
 
-                  <a href="/"
+                  <Link to="/"
                     className={`${props.hover}  px-3 py-2 rounded-md text-sm font-medium`}>
                     Profile
-                  </a>
+                  </Link>
 
-                  <a
-                    href="/"
+                  <Link
+                    to="/"
                     className={`${props.hover}  px-3 py-2 rounded-md text-sm font-medium`}>
                     Calendar
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -100,7 +104,7 @@ export default function Navbar(props) {
 
 
 
-              {/* toggleMode */}  
+              {/* toggleMode */}
               <label className="relative flex justify-between items-center group p-2 text-xl">
                 <input type="checkbox" onClick={props.toggleMode} className="absolute left-1/2 -translate-x-1/2 w-full h-full peer appearance-none rounded-md" />
                 <span className="w-10 h-6 flex items-center flex-shrink-0 ml-4 p-1 bg-gray-400 rounded-full duration-300 ease-in-out peer-checked:bg-blue-600 after:w-4 after:h-4 after:bg-white after:rounded-full after:shadow-md after:duration-300 peer-checked:after:translate-x-4 "></span>
@@ -157,31 +161,36 @@ export default function Navbar(props) {
           </div>
         </div>
 
+
+
+
+
+
         {/* <!-- Mobile menu, show/hide based on menu state. --> */}
-        <div className="sm:hidden hidden" id="mobile-menu">
+        <div className={`sm:hidden  ${props.navMenu} `} id="mobile-menu">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
-            <a
-              href="/"
-              className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
+            <Link
+              to="/"
+              className={`${props.activeTab} block border-2 transition  ease-in-out duration-500  px-3 py-2 rounded-md text-base font-medium`}
               aria-current="page">
-              Dashboard
-            </a>
+              React bitch
+            </Link>
 
-            <a href="/"
-              className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-              Team
-            </a>
+            <Link to="/about"
+              className={`${props.hover} block px-3 py-2 rounded-md text-base border-2 border-gray-400 font-medium`}>
+              About
+            </Link>
+            
+            <Link to="/"
+              className={`${props.hover} block px-3 py-2 rounded-md text-base border-2 border-gray-400 font-medium`}>
+              Profile
+            </Link>
 
-            <a href="/"
-              className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-              Projects
-            </a>
+            <Link to="/"
+              className={`${props.hover} block px-3 py-2 rounded-md text-base border-2 border-gray-400 font-medium`}>
+              Calender
+            </Link>
 
-            <a href="/"
-              className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-              Calendar
-            </a>
           </div>
         </div>
       </nav >
