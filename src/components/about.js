@@ -27,7 +27,7 @@ export default function About() {
     };
   }
   return (
-    <div className='container flex p-5 justify-center bg-slate-400 pb-12'>
+    <div className='transition-all ease-in-out duration-700 container flex p-5 justify-center bg-slate-400 pb-12'>
       <section className="shadow row w-3/5">
         <div className="tabs" style={dark}>
           <div className="border-b tab">

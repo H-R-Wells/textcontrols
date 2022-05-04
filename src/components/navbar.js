@@ -67,26 +67,26 @@ export default function Navbar(props) {
             <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
               <div className="hidden sm:block sm:ml-6">
                 <div className="flex space-x-4">
-                  <Link
+                  <button ><Link
                     to="/"
-                    className={`${props.activeTab} transition  ease-in-out duration-500  px-3 py-2 rounded-md text-sm font-medium`}
+                    className={`${props.home} transition  ease-in-out duration-500  px-3 py-2 rounded-md text-sm font-medium`}
                     aria-current="page">
-                    React bitch
-                  </Link>
+                    Text Control
+                  </Link></button>
 
-                  <Link to="/about"
-                    className={`${props.hover}  px-3 py-2 rounded-md text-sm font-medium`}>
+                  <button ><Link to="/about"
+                    className={`${props.about}  px-3 py-2 rounded-md text-sm font-medium`}>
                     About
-                  </Link>
+                  </Link></button>
 
-                  <Link to="/"
-                    className={`${props.hover}  px-3 py-2 rounded-md text-sm font-medium`}>
-                    Profile
-                  </Link>
+                  <button ><Link to="/"
+                    className={`${props.projects} px-3 py-2 rounded-md text-sm font-medium`}>
+                    Projects
+                  </Link></button>
 
                   <Link
                     to="/"
-                    className={`${props.hover}  px-3 py-2 rounded-md text-sm font-medium`}>
+                    className={` px-3 py-2 rounded-md text-sm font-medium`}>
                     Calendar
                   </Link>
                 </div>
@@ -103,11 +103,18 @@ export default function Navbar(props) {
             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
 
 
-
               {/* toggleMode */}
-              <label className="relative flex justify-between items-center group p-2 text-xl">
+              {/* default off */}
+              {/* <label className="relative flex justify-between items-center group p-2 text-xl">
                 <input type="checkbox" onClick={props.toggleMode} className="absolute left-1/2 -translate-x-1/2 w-full h-full peer appearance-none rounded-md" />
                 <span className="w-10 h-6 flex items-center flex-shrink-0 ml-4 p-1 bg-gray-400 rounded-full duration-300 ease-in-out peer-checked:bg-blue-600 after:w-4 after:h-4 after:bg-white after:rounded-full after:shadow-md after:duration-300 peer-checked:after:translate-x-4 "></span>
+              </label> */}
+
+
+              {/* default - on */}
+              <label className="relative flex justify-between items-center group p-2 text-xl">
+                <input type="checkbox" onClick={props.toggleMode} className="absolute left-1/2 -translate-x-1/2 w-full h-full peer appearance-none rounded-md" />
+                <span className="w-10 h-6 flex items-center flex-shrink-0 ml-4 p-1 bg-blue-600 rounded-full duration-300 ease-in-out peer-checked:bg-gray-400 after:w-4 after:h-4 after:bg-white after:rounded-full after:shadow-md after:duration-300 peer-checked:after:-translate-x-4 after:ml-4"></span>
               </label>
 
 
@@ -117,7 +124,7 @@ export default function Navbar(props) {
               <div className="ml-3 relative">
                 <div>
                   <button
-                    type="button"
+                    type="button" onClick={props.toggleProfile}
                     className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 "
                     id="user-menu-button"
                     aria-expanded="false"
@@ -127,29 +134,30 @@ export default function Navbar(props) {
                   </button>
                 </div>
 
+
+                {/* profile */}
                 <div
-                  className="hidden origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                  className={`${props.profile} origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none transition-all ease-in-out duration-300 `}
                   role="menu"
                   aria-orientation="vertical"
                   aria-labelledby="user-menu-button"
                   tabIndex="-1">
-                  {/* <!-- Active: "bg-gray-100", Not Active: "" --> */}
                   <a href="/"
-                    className="block px-4 py-2 text-sm text-gray-700"
+                    className="block px-4 py-2 hover:bg-gray-200 text-sm text-gray-700"
                     role="menuitem"
                     tabIndex="-1"
                     id="user-menu-item-0">
                     Your Profile
                   </a>
                   <a href="/"
-                    className="block px-4 py-2 text-sm text-gray-700"
+                    className="block px-4 py-2 hover:bg-gray-200 text-sm text-gray-700"
                     role="menuitem"
                     tabIndex="-1"
                     id="user-menu-item-1">
                     Settings
                   </a>
                   <a href="/"
-                    className="block px-4 py-2 text-sm text-gray-700"
+                    className="block px-4 py-2 hover:bg-gray-200 text-sm text-gray-700"
                     role="menuitem"
                     tabIndex="-1"
                     id="user-menu-item-2">
@@ -171,23 +179,23 @@ export default function Navbar(props) {
           <div className="px-2 pt-2 pb-3 space-y-1">
             <Link
               to="/"
-              className={`${props.activeTab} block border-2 transition  ease-in-out duration-500  px-3 py-2 rounded-md text-base font-medium`}
+              className={`${props.home} block border-2 transition  ease-in-out duration-500  px-3 py-2 rounded-md text-base font-medium`}
               aria-current="page">
-              React bitch
+              Text Control
             </Link>
 
             <Link to="/about"
-              className={`${props.hover} block px-3 py-2 rounded-md text-base border-2 border-gray-400 font-medium`}>
+              className={`${props.about} block px-3 py-2 rounded-md text-base border-2 border-gray-400 font-medium`}>
               About
-            </Link>
-            
-            <Link to="/"
-              className={`${props.hover} block px-3 py-2 rounded-md text-base border-2 border-gray-400 font-medium`}>
-              Profile
             </Link>
 
             <Link to="/"
-              className={`${props.hover} block px-3 py-2 rounded-md text-base border-2 border-gray-400 font-medium`}>
+              className={`${props.about} block px-3 py-2 rounded-md text-base border-2 border-gray-400 font-medium`}>
+              Projects
+            </Link>
+
+            <Link to="/"
+              className={`${props.about} block px-3 py-2 rounded-md text-base border-2 border-gray-400 font-medium`}>
               Calender
             </Link>
 
