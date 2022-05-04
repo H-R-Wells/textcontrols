@@ -1,24 +1,10 @@
 import { useState } from "react";
 import "./App.css";
-import About from "./components/about";
+// import About from "./components/about";
 import Navbar from "./components/navbar";
 import TextForm from "./components/textForm";
 import Alert from "./components/alert";
 
-
-
-// import {
-//   BrowserRouter,
-//   Routes,
-//   Route,
-//   // Link,
-// } from "react-router-dom";
-
-import {
-  HashRouter as Router,
-  Routes,
-  Route,
-} from 'react-router-dom';
 
 
 
@@ -27,8 +13,7 @@ function App() {
 
   // useStates for Navbar
   const [mode, setMode] = useState("bg-gray-800 text-gray-300");
-  const [about, setAbout] = useState("'md:hover:bg-gray-700 hover:text-white");
-  const [projects, setProjects] = useState("'md:hover:bg-gray-700 hover:text-white");
+  const [about, setAbout] = useState("md:hover:bg-gray-700 hover:text-white");
   const [home, setHome] = useState("bg-gray-900 text-white md:border-0 border-2 border-white");
   const [navBtn, setNavBtn] = useState("hidden");
   const [navBtn2, setNavBtn2] = useState("block");
@@ -137,59 +122,59 @@ function App() {
 
 
 
-  // functions to change nav tab designs
-  let notActiveTabLight = "md:hover:bg-gray-200";
-  let activeTabLight = "bg-white text-black md:border-0 border-2 border-black";
-  let notActiveTabDark = "md:hover:bg-gray-700 hover:text-white";
-  let activeTabDark = "bg-gray-900 text-white md:border-0 border-2 border-white";
+  // // functions to change nav tab designs
+  // let notActiveTabLight = "md:hover:bg-gray-200";
+  // let activeTabLight = "bg-white text-black md:border-0 border-2 border-black";
+  // let notActiveTabDark = "md:hover:bg-gray-700 hover:text-white";
+  // let activeTabDark = "bg-gray-900 text-white md:border-0 border-2 border-white";
 
-  // Home
-  const homeNav = () => {
-    if (mode === "bg-gray-300 text-black") {
-      // Light mode
-      setHome(activeTabLight);
-      setAbout(notActiveTabLight);
-      setProjects(notActiveTabLight);
-    }
-    else {
-      // Dark mode
-      setHome(activeTabDark);
-      setAbout(notActiveTabDark);
-      setProjects(notActiveTabDark);
-    }
-  }
+  // // Home
+  // const homeNav = () => {
+  //   if (mode === "bg-gray-300 text-black") {
+  //     // Light mode
+  //     setHome(activeTabLight);
+  //     setAbout(notActiveTabLight);
+  //     setProjects(notActiveTabLight);
+  //   }
+  //   else {
+  //     // Dark mode
+  //     setHome(activeTabDark);
+  //     setAbout(notActiveTabDark);
+  //     setProjects(notActiveTabDark);
+  //   }
+  // }
 
-  // About
-  const aboutNav = () => {
-    if (mode === "bg-gray-300 text-black") {
-      // Light mode
-      setAbout(activeTabLight);
-      setHome(notActiveTabLight);
-      setProjects(notActiveTabLight);
-    }
-    else {
-      // Dark mode
-      setAbout(activeTabDark);
-      setHome(notActiveTabDark);
-      setProjects(notActiveTabDark);
-    }
-  }
+  // // About
+  // const aboutNav = () => {
+  //   if (mode === "bg-gray-300 text-black") {
+  //     // Light mode
+  //     setAbout(activeTabLight);
+  //     setHome(notActiveTabLight);
+  //     setProjects(notActiveTabLight);
+  //   }
+  //   else {
+  //     // Dark mode
+  //     setAbout(activeTabDark);
+  //     setHome(notActiveTabDark);
+  //     setProjects(notActiveTabDark);
+  //   }
+  // }
 
-  // Projects
-  const projectNav = () => {
-    if (mode === "bg-gray-300 text-black") {
-      // Light mode
-      setProjects(activeTabLight);
-      setAbout(notActiveTabLight);
-      setHome(notActiveTabLight);
-    }
-    else {
-      // Dark mode
-      setProjects(activeTabDark);
-      setAbout(notActiveTabDark);
-      setHome(notActiveTabDark);
-    }
-  }
+  // // Projects
+  // const projectNav = () => {
+  //   if (mode === "bg-gray-300 text-black") {
+  //     // Light mode
+  //     setProjects(activeTabLight);
+  //     setAbout(notActiveTabLight);
+  //     setHome(notActiveTabLight);
+  //   }
+  //   else {
+  //     // Dark mode
+  //     setProjects(activeTabDark);
+  //     setAbout(notActiveTabDark);
+  //     setHome(notActiveTabDark);
+  //   }
+  // }
 
 
 
@@ -197,29 +182,13 @@ function App() {
 
   return (
     <>
-      {/* <BrowserRouter>
-      <Navbar projectNav={projectNav} projects={projects} homeNav={homeNav} aboutNav={aboutNav} profile={profile} toggleProfile={toggleProfile} navBtn={navBtn} navBtn2={navBtn2} navMenu={navMenu} toggleNavMenu={toggleNavMenu} showAlert={showAlert} mode={mode} toggleMode={toggleMode} about={about} home={home}/>
-      <Alert alertHide={alertHide} toggleAlert={toggleAlert} alert={alert} />
-      <Routes>
-        <Route exact path="/" element={<TextForm mainBox={mainBox} mainBox2={mainBox2} textMain={textMain} textArea={textArea} /> } />
-        <Route exact path="/about" element={<About/>} />
-      </Routes>
-    </BrowserRouter> */}
+          <Navbar  profile={profile} toggleProfile={toggleProfile} navBtn={navBtn} navBtn2={navBtn2} navMenu={navMenu} toggleNavMenu={toggleNavMenu} showAlert={showAlert} mode={mode} toggleMode={toggleMode} about={about} home={home} />
 
-
-
-
-
-      <Router>
-        <div>
-          <Navbar projectNav={projectNav} projects={projects} homeNav={homeNav} aboutNav={aboutNav} profile={profile} toggleProfile={toggleProfile} navBtn={navBtn} navBtn2={navBtn2} navMenu={navMenu} toggleNavMenu={toggleNavMenu} showAlert={showAlert} mode={mode} toggleMode={toggleMode} about={about} home={home} />
           <Alert alertHide={alertHide} toggleAlert={toggleAlert} alert={alert} />
-          <Routes>
-            <Route exact path="/" element={<TextForm mainBox={mainBox} mainBox2={mainBox2} textMain={textMain} textArea={textArea} />} />
-            <Route exact path="/about" element={<About />} />
-          </Routes>
-        </div>
-      </Router>
+
+          <TextForm mainBox={mainBox} mainBox2={mainBox2} textMain={textMain} textArea={textArea} />
+
+          {/* <About /> */}
     </>
   );
 }

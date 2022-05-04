@@ -1,7 +1,6 @@
 import React from 'react';
 import hrwells from "./hrwells.jpg";
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 
 export default function Navbar(props) {
   return (
@@ -67,28 +66,26 @@ export default function Navbar(props) {
             <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
               <div className="hidden sm:block sm:ml-6">
                 <div className="flex space-x-4">
-                  <button ><Link
-                    to="/"
+                  <button type='button'
                     className={`${props.home} transition  ease-in-out duration-500  px-3 py-2 rounded-md text-sm font-medium`}
                     aria-current="page">
                     Text Control
-                  </Link></button>
+                  </button>
 
-                  <button ><Link to="/about"
+                  <button type='button'
                     className={`${props.about}  px-3 py-2 rounded-md text-sm font-medium`}>
                     About
-                  </Link></button>
+                  </button>
 
-                  <button ><Link to="/"
-                    className={`${props.projects} px-3 py-2 rounded-md text-sm font-medium`}>
+                  <button type='button'
+                    className={`${props.about} px-3 py-2 rounded-md text-sm font-medium`}>
                     Projects
-                  </Link></button>
+                  </button>
 
-                  <Link
-                    to="/"
-                    className={` px-3 py-2 rounded-md text-sm font-medium`}>
+                  <button type='button'
+                    className={`${props.about} px-3 py-2 rounded-md text-sm font-medium`}>
                     Calendar
-                  </Link>
+                  </button>
                 </div>
               </div>
             </div>
@@ -177,27 +174,27 @@ export default function Navbar(props) {
         {/* <!-- Mobile menu, show/hide based on menu state. --> */}
         <div className={`sm:hidden  ${props.navMenu} `} id="mobile-menu">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            <Link
-              to="/"
+            <a
+              href="/"
               className={`${props.home} block border-2 transition  ease-in-out duration-500  px-3 py-2 rounded-md text-base font-medium`}
               aria-current="page">
               Text Control
-            </Link>
+            </a>
 
-            <Link to="/about"
+            <a href="/about"
               className={`${props.about} block px-3 py-2 rounded-md text-base border-2 border-gray-400 font-medium`}>
               About
-            </Link>
+            </a>
 
-            <Link to="/"
+            <a href="/"
               className={`${props.about} block px-3 py-2 rounded-md text-base border-2 border-gray-400 font-medium`}>
               Projects
-            </Link>
+            </a>
 
-            <Link to="/"
+            <a href="/"
               className={`${props.about} block px-3 py-2 rounded-md text-base border-2 border-gray-400 font-medium`}>
               Calender
-            </Link>
+            </a>
 
           </div>
         </div>

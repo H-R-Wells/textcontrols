@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 
 export default function TextForm(props) {
@@ -84,37 +83,37 @@ export default function TextForm(props) {
                         <div className="flex">
                             <button type="button" id="addbtn" onClick={upClick} onChange={handleOnChange}
                                 className=" w-full mx-2 px-2 py-3 md:py-2.5 bg-blue-600 text-white font-medium text-sm leading-tight uppercase rounded shadow-md md:hover:bg-blue-800 hover:shadow-lg focus:bg-blue-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-600 active:shadow-lg active:text-gray-400  transition  duration-150 ease-in-out">
-                                <Link to="/">Upper case</Link>
+                                Upper case
                             </button>
                             <button type="button" onClick={lowClick} onChange={handleOnChange}
                                 className=" w-full mx-2 px-2 py-3 md:py-2.5 bg-blue-600 text-white font-medium text-sm leading-tight uppercase rounded shadow-md md:hover:bg-blue-800 hover:shadow-lg focus:bg-blue-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-600 active:shadow-lg active:text-gray-400  transition  duration-150 ease-in-out">
-                                 <Link to="/">Lower case</Link>
+                                 Lower case
                             </button>
                         </div>
                         <div className="flex mt-2">
                             <button type="button" id="addbtn" onClick={sentanceCase} onChange={handleOnChange}
                                 className=" w-full mx-2 px-2 py-3 md:py-2.5 bg-blue-600 text-white font-medium text-sm leading-tight uppercase rounded shadow-md md:hover:bg-blue-800 hover:shadow-lg focus:bg-blue-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-600 active:shadow-lg active:text-gray-400  transition  duration-150 ease-in-out">
-                                <Link to="/">Sentance case</Link>
+                                Sentance case
                             </button>
                             <button type="button" onClick={capiCase} onChange={handleOnChange}
                                 className=" w-full mx-2 px-2 py-3 md:py-2.5 bg-blue-600 text-white font-medium text-sm leading-tight uppercase rounded shadow-md md:hover:bg-blue-800 hover:shadow-lg focus:bg-blue-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-600 active:shadow-lg active:text-gray-400  transition  duration-150 ease-in-out">
-                                <Link to="/"> capitalized case</Link>
+                                 capitalized case
                             </button>
                         </div>
                         <div className="flex mt-2">
                             <button type="button" id="addbtn" onClick={copyText} onChange={handleOnChange}
                                 className=" w-full mx-2 px-2 py-3 md:py-2.5 bg-blue-600 text-white font-medium text-sm leading-tight uppercase rounded shadow-md md:hover:bg-blue-800 hover:shadow-lg focus:bg-blue-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-600 active:shadow-lg active:text-gray-400  transition  duration-150 ease-in-out">
-                                <Link to="/">Copy Text</Link>
+                                Copy Text
                             </button>
                             <button type="button" onClick={handleSpace} onChange={handleOnChange}
                                 className=" w-full mx-2 px-2 py-3 md:py-2.5 bg-blue-600 text-white font-medium text-sm leading-tight uppercase rounded shadow-md md:hover:bg-blue-800 hover:shadow-lg focus:bg-blue-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-600 active:shadow-lg active:text-gray-400  transition  duration-150 ease-in-out">
-                                <Link to="/">Clear extra space</Link>
+                                Clear extra space
                             </button>
                         </div>
                         <div className="flex mt-2">
                             <button type="button" onClick={cleartext1} onChange={handleOnChange}
                                 className=" w-full mx-2 px-2 py-3 md:py-2.5 bg-blue-600 text-white font-medium text-sm leading-tight uppercase rounded shadow-md md:hover:bg-blue-800 hover:shadow-lg focus:bg-blue-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-600 active:shadow-lg active:text-gray-400  transition  duration-150 ease-in-out">
-                                <Link to="/">Clear Text</Link>
+                                Clear Text
                             </button>
                         </div>
                     </form>
