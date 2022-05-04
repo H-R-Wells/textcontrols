@@ -7,12 +7,18 @@ import Alert from "./components/alert";
 
 
 
+// import {
+//   BrowserRouter,
+//   Routes,
+//   Route,
+//   // Link,
+// } from "react-router-dom";
+
 import {
-  BrowserRouter,
+  HashRouter as Router,
   Routes,
   Route,
-  // Link,
-} from "react-router-dom";
+} from 'react-router-dom';
 
 
 
@@ -39,15 +45,15 @@ function App() {
   const [alertHide, setAlertHide] = useState("block");
   const [alert, setAlert] = useState();
 
-// function to display msg in alert (not nessecery)
-  const showAlert=(msg1, type1)=> {
+  // function to display msg in alert (not nessecery)
+  const showAlert = (msg1, type1) => {
     setAlert({
       msg: msg1,
       type: type1
     })
   }
 
-  
+
 
 
   // function to change mode (dark/light)
@@ -90,11 +96,11 @@ function App() {
     if (alertHide === "block") {
       setAlertHide('hidden');
     }
-    else{
+    else {
       setAlertHide('block');
     }
   }
-  
+
 
 
   // function to hide and unhide mobile navbar
@@ -104,7 +110,7 @@ function App() {
       setNavBtn2('block');
       setNavMenu('hidden');
     }
-    else{
+    else {
       setNavBtn('block');
       setNavBtn2('hidden');
       setNavMenu('block');
@@ -114,14 +120,14 @@ function App() {
 
 
   // function to hide and unhide profileMenu 
-  const toggleProfile=()=>{
-    if (profile==="hidden"){
+  const toggleProfile = () => {
+    if (profile === "hidden") {
       setProfile('block opacity-0');
       setTimeout(() => {
         setProfile('opacity-100')
       }, 100);
     }
-    else{
+    else {
       setProfile('opacity-0');
       setTimeout(() => {
         setProfile('hidden')
@@ -137,15 +143,15 @@ function App() {
   let notActiveTabDark = "md:hover:bg-gray-700 hover:text-white";
   let activeTabDark = "bg-gray-900 text-white md:border-0 border-2 border-white";
 
-   // Home
-   const homeNav=()=>{
-    if (mode==="bg-gray-300 text-black"){
+  // Home
+  const homeNav = () => {
+    if (mode === "bg-gray-300 text-black") {
       // Light mode
       setHome(activeTabLight);
       setAbout(notActiveTabLight);
       setProjects(notActiveTabLight);
     }
-    else{
+    else {
       // Dark mode
       setHome(activeTabDark);
       setAbout(notActiveTabDark);
@@ -154,14 +160,14 @@ function App() {
   }
 
   // About
-  const aboutNav=()=>{
-    if (mode==="bg-gray-300 text-black"){
+  const aboutNav = () => {
+    if (mode === "bg-gray-300 text-black") {
       // Light mode
       setAbout(activeTabLight);
       setHome(notActiveTabLight);
       setProjects(notActiveTabLight);
     }
-    else{
+    else {
       // Dark mode
       setAbout(activeTabDark);
       setHome(notActiveTabDark);
@@ -169,15 +175,15 @@ function App() {
     }
   }
 
-   // Projects
-   const projectNav=()=>{
-    if (mode==="bg-gray-300 text-black"){
+  // Projects
+  const projectNav = () => {
+    if (mode === "bg-gray-300 text-black") {
       // Light mode
       setProjects(activeTabLight);
       setAbout(notActiveTabLight);
       setHome(notActiveTabLight);
     }
-    else{
+    else {
       // Dark mode
       setProjects(activeTabDark);
       setAbout(notActiveTabDark);
@@ -185,20 +191,35 @@ function App() {
     }
   }
 
- 
+
 
 
 
   return (
     <>
-      <BrowserRouter>
+      {/* <BrowserRouter>
       <Navbar projectNav={projectNav} projects={projects} homeNav={homeNav} aboutNav={aboutNav} profile={profile} toggleProfile={toggleProfile} navBtn={navBtn} navBtn2={navBtn2} navMenu={navMenu} toggleNavMenu={toggleNavMenu} showAlert={showAlert} mode={mode} toggleMode={toggleMode} about={about} home={home}/>
       <Alert alertHide={alertHide} toggleAlert={toggleAlert} alert={alert} />
       <Routes>
         <Route exact path="/" element={<TextForm mainBox={mainBox} mainBox2={mainBox2} textMain={textMain} textArea={textArea} /> } />
         <Route exact path="/about" element={<About/>} />
       </Routes>
-    </BrowserRouter>
+    </BrowserRouter> */}
+
+
+
+
+
+      <Router>
+        <div>
+          <Navbar projectNav={projectNav} projects={projects} homeNav={homeNav} aboutNav={aboutNav} profile={profile} toggleProfile={toggleProfile} navBtn={navBtn} navBtn2={navBtn2} navMenu={navMenu} toggleNavMenu={toggleNavMenu} showAlert={showAlert} mode={mode} toggleMode={toggleMode} about={about} home={home} />
+          <Alert alertHide={alertHide} toggleAlert={toggleAlert} alert={alert} />
+          <Routes>
+            <Route exact path="/" element={<TextForm mainBox={mainBox} mainBox2={mainBox2} textMain={textMain} textArea={textArea} />} />
+            <Route exact path="/about" element={<About />} />
+          </Routes>
+        </div>
+      </Router>
     </>
   );
 }

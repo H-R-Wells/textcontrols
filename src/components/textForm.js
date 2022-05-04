@@ -1,14 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 
 export default function TextForm(props) {
     const [text1, setText] = useState("");
 
 
-    if (text1.match(/(\w+)/g)!==null){
+    if (text1.match(/(\w+)/g) !== null) {
         var wordCount = text1.match(/(\w+)/g).length;
         var letterCount = text1.match(/(\w)/g).length;
     }
-    else{
+    else {
         wordCount = "0";
         letterCount = "0";
     }
@@ -80,39 +82,39 @@ export default function TextForm(props) {
                         </div>
 
                         <div className="flex">
-                            <button type="submit" id="addbtn" onClick={upClick} onChange={handleOnChange}
+                            <button type="button" id="addbtn" onClick={upClick} onChange={handleOnChange}
                                 className=" w-full mx-2 px-2 py-3 md:py-2.5 bg-blue-600 text-white font-medium text-sm leading-tight uppercase rounded shadow-md md:hover:bg-blue-800 hover:shadow-lg focus:bg-blue-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-600 active:shadow-lg active:text-gray-400  transition  duration-150 ease-in-out">
-                                <a href="#list"> Upper case</a>
+                                <Link to="/">Upper case</Link>
                             </button>
-                            <button type="submit" onClick={lowClick} onChange={handleOnChange}
+                            <button type="button" onClick={lowClick} onChange={handleOnChange}
                                 className=" w-full mx-2 px-2 py-3 md:py-2.5 bg-blue-600 text-white font-medium text-sm leading-tight uppercase rounded shadow-md md:hover:bg-blue-800 hover:shadow-lg focus:bg-blue-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-600 active:shadow-lg active:text-gray-400  transition  duration-150 ease-in-out">
-                                <a href="#list"> Lower case</a>
-                            </button>
-                        </div>
-                        <div className="flex mt-2">
-                            <button type="submit" id="addbtn" onClick={sentanceCase} onChange={handleOnChange}
-                                className=" w-full mx-2 px-2 py-3 md:py-2.5 bg-blue-600 text-white font-medium text-sm leading-tight uppercase rounded shadow-md md:hover:bg-blue-800 hover:shadow-lg focus:bg-blue-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-600 active:shadow-lg active:text-gray-400  transition  duration-150 ease-in-out">
-                                <a href="#list"> Sentance case</a>
-                            </button>
-                            <button type="submit" onClick={capiCase} onChange={handleOnChange}
-                                className=" w-full mx-2 px-2 py-3 md:py-2.5 bg-blue-600 text-white font-medium text-sm leading-tight uppercase rounded shadow-md md:hover:bg-blue-800 hover:shadow-lg focus:bg-blue-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-600 active:shadow-lg active:text-gray-400  transition  duration-150 ease-in-out">
-                                <a href="#list"> capitalized case</a>
+                                 <Link to="/">Lower case</Link>
                             </button>
                         </div>
                         <div className="flex mt-2">
-                            <button type="submit" id="addbtn" onClick={copyText} onChange={handleOnChange}
+                            <button type="button" id="addbtn" onClick={sentanceCase} onChange={handleOnChange}
                                 className=" w-full mx-2 px-2 py-3 md:py-2.5 bg-blue-600 text-white font-medium text-sm leading-tight uppercase rounded shadow-md md:hover:bg-blue-800 hover:shadow-lg focus:bg-blue-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-600 active:shadow-lg active:text-gray-400  transition  duration-150 ease-in-out">
-                                <a href="#list"> Copy Text</a>
+                                <Link to="/">Sentance case</Link>
                             </button>
-                            <button type="submit" onClick={handleSpace} onChange={handleOnChange}
+                            <button type="button" onClick={capiCase} onChange={handleOnChange}
                                 className=" w-full mx-2 px-2 py-3 md:py-2.5 bg-blue-600 text-white font-medium text-sm leading-tight uppercase rounded shadow-md md:hover:bg-blue-800 hover:shadow-lg focus:bg-blue-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-600 active:shadow-lg active:text-gray-400  transition  duration-150 ease-in-out">
-                                <a href="#list"> Clear extra space</a>
+                                <Link to="/"> capitalized case</Link>
                             </button>
                         </div>
                         <div className="flex mt-2">
-                            <button type="submit" onClick={cleartext1} onChange={handleOnChange}
+                            <button type="button" id="addbtn" onClick={copyText} onChange={handleOnChange}
                                 className=" w-full mx-2 px-2 py-3 md:py-2.5 bg-blue-600 text-white font-medium text-sm leading-tight uppercase rounded shadow-md md:hover:bg-blue-800 hover:shadow-lg focus:bg-blue-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-600 active:shadow-lg active:text-gray-400  transition  duration-150 ease-in-out">
-                                <a href="#list"> Clear Text</a>
+                                <Link to="/">Copy Text</Link>
+                            </button>
+                            <button type="button" onClick={handleSpace} onChange={handleOnChange}
+                                className=" w-full mx-2 px-2 py-3 md:py-2.5 bg-blue-600 text-white font-medium text-sm leading-tight uppercase rounded shadow-md md:hover:bg-blue-800 hover:shadow-lg focus:bg-blue-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-600 active:shadow-lg active:text-gray-400  transition  duration-150 ease-in-out">
+                                <Link to="/">Clear extra space</Link>
+                            </button>
+                        </div>
+                        <div className="flex mt-2">
+                            <button type="button" onClick={cleartext1} onChange={handleOnChange}
+                                className=" w-full mx-2 px-2 py-3 md:py-2.5 bg-blue-600 text-white font-medium text-sm leading-tight uppercase rounded shadow-md md:hover:bg-blue-800 hover:shadow-lg focus:bg-blue-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-600 active:shadow-lg active:text-gray-400  transition  duration-150 ease-in-out">
+                                <Link to="/">Clear Text</Link>
                             </button>
                         </div>
                     </form>
@@ -124,7 +126,7 @@ export default function TextForm(props) {
                     <p className='font-medium text-xl'>{wordCount} words and {letterCount} characters</p>
                     <p className='font-semibold text-2xl mt-4'>Preview:</p>
                     <p id='preview' className='hidden text-slate-400'>Preview of the text will print here </p>
-                    <p className='text-blue-600 text-clip break-words'>{text1}</p>
+                    <p className=' text-clip break-words'>{text1}</p>
                 </div>
             </div>
         </div>
