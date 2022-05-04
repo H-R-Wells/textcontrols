@@ -139,21 +139,21 @@ export default function Navbar(props) {
                   aria-orientation="vertical"
                   aria-labelledby="user-menu-button"
                   tabIndex="-1">
-                  <a href="/"
+                  <a href="#"
                     className="block px-4 py-2 hover:bg-gray-200 text-sm text-gray-700"
                     role="menuitem"
                     tabIndex="-1"
                     id="user-menu-item-0">
                     Your Profile
                   </a>
-                  <a href="/"
+                  <a href="#"
                     className="block px-4 py-2 hover:bg-gray-200 text-sm text-gray-700"
                     role="menuitem"
                     tabIndex="-1"
                     id="user-menu-item-1">
                     Settings
                   </a>
-                  <a href="/"
+                  <a href="#"
                     className="block px-4 py-2 hover:bg-gray-200 text-sm text-gray-700"
                     role="menuitem"
                     tabIndex="-1"
@@ -175,23 +175,23 @@ export default function Navbar(props) {
         <div className={`sm:hidden  ${props.navMenu} `} id="mobile-menu">
           <div className="px-2 pt-2 pb-3 space-y-1">
             <a
-              href="/"
+              href="#"
               className={`${props.home} block border-2 transition  ease-in-out duration-500  px-3 py-2 rounded-md text-base font-medium`}
               aria-current="page">
               Text Control
             </a>
 
-            <a href="/about"
+            <a href="#"
               className={`${props.about} block px-3 py-2 rounded-md text-base border-2 border-gray-400 font-medium`}>
               About
             </a>
 
-            <a href="/"
+            <a href="#"
               className={`${props.about} block px-3 py-2 rounded-md text-base border-2 border-gray-400 font-medium`}>
               Projects
             </a>
 
-            <a href="/"
+            <a href="#"
               className={`${props.about} block px-3 py-2 rounded-md text-base border-2 border-gray-400 font-medium`}>
               Calender
             </a>
