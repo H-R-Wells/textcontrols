@@ -125,7 +125,7 @@ export default function TextForm(props) {
                     <p className='font-medium text-xl'>{wordCount} words and {letterCount} characters</p>
                     <p className='font-semibold text-2xl mt-4'>Preview:</p>
                     <p id='preview' className='hidden text-slate-400'>Preview of the text will print here </p>
-                    <p className=' text-clip break-words'>{text1}</p>
+                    <p className=' text-clip break-words'>{text1.length>0?text1: "Nothing to preview"}</p>
                 </div>
             </div>
         </div>
